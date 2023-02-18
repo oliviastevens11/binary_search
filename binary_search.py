@@ -82,7 +82,7 @@ def count_repeats(xs, x):
     def lowest(low, high):
         mid = (low + high) // 2
         if xs[mid] == x:
-            if xs[mid-1] > x or mid == 0:
+            if xs[mid - 1] > x or mid == 0:
                 return mid
             else:
                 return lowest(low, mid - 1)
@@ -98,7 +98,7 @@ def count_repeats(xs, x):
         if high == low:
             return mid
         if xs[mid] == x:
-            if xs[mid+1] < x or mid == 0:
+            if xs[mid + 1] < x or mid == 0:
                 return mid
             else:
                 return highest(mid + 1, high)
@@ -112,7 +112,7 @@ def count_repeats(xs, x):
     if highest(low, high) is None:
         return 0
 
-    if lowest(low, high)is None:
+    if lowest(low, high) is None:
         return 0
 
     difference = highest(low, high) - lowest(low, high) + 1
