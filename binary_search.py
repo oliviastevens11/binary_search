@@ -207,9 +207,9 @@ def find_boundaries(f):
         if f(mid) > f(lo) and f(mid) > f(hi):
             return (lo, hi)
         elif f(lo) < f(mid):
-            return go(lo*2, mid)
+            return go(lo * 2, mid)
         elif f(hi) < f(mid):
-            return go(mid, hi*2)
+            return go(mid, hi * 2)
         else:
             return (lo, hi)
     return go(lo, hi)
