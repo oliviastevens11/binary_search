@@ -201,6 +201,7 @@ def find_boundaries(f):
     '''
     lo = -1
     hi = 1
+
     def go(lo, hi):
         mid = (lo + hi) / 2
         if f(mid) > f(lo) and f(mid) > f(hi):
@@ -227,7 +228,3 @@ def argmin_simple(f, epsilon=1e-3):
     '''
     lo, hi = find_boundaries(f)
     return argmin(f, lo, hi, epsilon)
-
-epsilon = 1e-3
-x_min = 0
-print("argmin_simple(f,epsilon)-x_min)=", argmin_simple(lambda x: (x-x_min)**2,epsilon)-x_min)
